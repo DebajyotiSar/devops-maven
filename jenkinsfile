@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
-    stages {
+
+    parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: 'Test_Deploy') }
+   
+   stages {
         stage ('Compile Stage') {
 
             steps {
@@ -25,6 +28,7 @@ pipeline {
             steps {
                 withMaven(maven : 'maven') {
                     sh 'mvn install'
+		    echo "display $DEPLOY_ENV"
                 }
             }
         }
