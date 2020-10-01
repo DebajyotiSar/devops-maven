@@ -1,0 +1,20 @@
+pipeline{
+	agent any
+		environment {
+			PATH = '/opt/maven :$PATH'
+		}
+		stages{
+			stage("Git checkout")
+			{
+				steps{
+					git 'https://github.com/debodevs/devops-maven.git'
+				}
+			}
+			stage("Example Maven build")
+			{
+				steps{
+					sh 'mvn clean package'
+				}
+			}
+		}
+}
