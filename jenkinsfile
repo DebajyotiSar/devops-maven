@@ -28,7 +28,7 @@ pipeline {
             steps {
                 withMaven(maven : 'MAVEN_HOME') {
                     sh 'mvn install'
-		    echo "display $DEPLOY_ENV"
+		    echo "'display $DEPLOY_ENV'"
                 }
             }
         }
