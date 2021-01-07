@@ -5,4 +5,4 @@
 #Place : Hyderabad
 
 echo "This is a Maven job project"
-echo "Welcom to Devops Team in Hyderabad""
+echo "Welcome to Devops Team in Bangalore""
